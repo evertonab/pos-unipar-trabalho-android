@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import com.example.cadastronotafrequencia.R;
 import com.example.cadastronotafrequencia.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {
@@ -20,6 +22,10 @@ public class HomeFragment extends Fragment {
 
 
         return root;
+    }
+
+    public void lancarFrequencia(){
+
     }
 
     @Override

@@ -8,7 +8,7 @@
     <fragment
             android:id="@+id/nav_home"
             android:name="com.example.cadastronotafrequencia.ui.home.HomeFragment"
-            android:label="@string/menu_home"
+            android:label=""
             tools:layout="@layout/fragment_home"/>
 
 
@@ -49,8 +49,5 @@
             android:label="@string/menu_cadasto_frequencia"
             tools:layout="@layout/activity_cadastro_frequencia"
     />
-
-
-
 
 </navigation>
