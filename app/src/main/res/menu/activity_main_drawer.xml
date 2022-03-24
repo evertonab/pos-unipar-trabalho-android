@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+                android:id="@+id/nav_home"
+                android:icon="@drawable/ic_home_inverted"
+                android:title="@string/menu_home"/>
+
+        <item
+                android:id="@+id/nav_cadNotas"
+                android:icon="@drawable/ic_nota_inverted"
+                android:title="@string/menu_cadastro_notas"
+        />
+
+
+        <item
+                android:id="@+id/nav_cadFrequencia"
+                android:icon="@drawable/ic_frequencia_inverted"
+                android:title="@string/menu_cadatro_frequencia"
+        />
+
+
+        <item
+                android:id="@+id/nav_cadPessoa"
+                android:icon="@drawable/ic_professor_inverted"
+                android:iconTint="@color/red_unipar_700"
+                android:title="@string/menu_cadastro_professor"/>
+
+        <item
+                android:id="@+id/nav_cadAluno"
+                android:icon="@drawable/ic_aluno_inverted"
+                android:title="@string/menu_cadastra_aluno"/>
+
+        <item
+                android:id="@+id/nav_cadDisciplina"
+                android:icon="@drawable/ic_disciplina_inverted"
+                android:title="@string/menu_cadatro_disciplina"/>
+
+        <item
+                android:id="@+id/nav_cadTurma"
+                android:icon="@drawable/ic_turma_inverted"
+                android:title="@string/menu_cadatro_turma"/>
+
+
+    </group>
+</menu>

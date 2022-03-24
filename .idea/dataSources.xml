@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="cadasto" uuid="8c8e7a69-354b-45d2-89f6-6c9dd2b731d0">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$USER_HOME$/.cache/JetBrains/IntelliJIdea2021.3/android/databases/SERIAL_NUMBER_fb1dc01/com.example.CadastroNotaFrequencia/internal/cadastro_nota.db</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+  </component>
+</project>

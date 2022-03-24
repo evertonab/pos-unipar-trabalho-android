@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/mobile_navigation"
+            app:startDestination="@+id/nav_home">
+
+    <fragment
+            android:id="@+id/nav_home"
+            android:name="com.example.cadastronotafrequencia.ui.home.HomeFragment"
+            android:label="@string/menu_home"
+            tools:layout="@layout/fragment_home"/>
+
+
+    <fragment
+            android:id="@+id/nav_cadPessoa"
+            android:name="com.example.cadastronotafrequencia.ui.lista.ListaProfessorFragment"
+            android:label="@string/menu_cadastro_professor"
+            tools:layout="@layout/fragment_lista"/>
+
+    <fragment
+            android:id="@+id/nav_cadAluno"
+            android:name="com.example.cadastronotafrequencia.ui.lista.ListaAlunoFragment"
+            android:label="@string/menu_cadastra_aluno"
+            tools:layout="@layout/fragment_lista"/>
+
+    <fragment
+            android:id="@+id/nav_cadDisciplina"
+            android:name="com.example.cadastronotafrequencia.ui.lista.ListaDisciplinaFragment"
+            android:label="@string/menu_cadatro_disciplina"
+            tools:layout="@layout/fragment_lista"/>
+
+    <fragment
+            android:id="@+id/nav_cadTurma"
+            android:name="com.example.cadastronotafrequencia.ui.lista.ListaTurmaFragment"
+            android:label="@string/menu_cadatro_turma"
+            tools:layout="@layout/fragment_lista"/>
+
+    <activity
+        android:id="@+id/nav_cadNotas"
+        android:name="com.example.cadastronotafrequencia.CadastroNotasActivity"
+        android:label="@string/menu_cadastro_notas"
+        tools:layout="@layout/activity_cadastro_notas"
+    />
+
+    <activity
+            android:id="@+id/nav_cadFrequencia"
+            android:name="com.example.cadastronotafrequencia.CadastroFrequenciaActivity"
+            android:label="@string/menu_cadasto_frequencia"
+            tools:layout="@layout/activity_cadastro_frequencia"
+    />
+
+
+
+
+</navigation>

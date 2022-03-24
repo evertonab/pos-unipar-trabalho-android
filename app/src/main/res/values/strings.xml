@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">CadastroNotaFrequencia</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="ra">RA</string>
+    <string name="cpf">CPF</string>
+    <string name="nome">Nome</string>
+    <string name="turma">Turma</string>
+    <string name="dtMatricula">Dt.Matricula</string>
+    <string name="dtNasc">Dt.Nascimento</string>
+    <string name="statusAprovacao">"Status "</string>
+    <string name="menu_cadastra_aluno">Cadastrar Aluno</string>
+    <string name="limpar">Limpar</string>
+    <string name="salvar">Salvar</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- texto menus -->
+    <string name="menu_cadastro_professor">Cadastrar Professor</string>
+    <string name="menu_cadatro_disciplina">Cadastrar Disciplina</string>
+    <string name="menu_cadatro_turma">Cadastrar Turma</string>
+    <string name="menu_home">Home</string>
+
+    <string name="professor">Professor</string>
+    <string name="selecioneProfessor">Selecionar Professor</string>
+
+    <string name="disciplina">Disciplina</string>
+
+    <string name="periodo">Periodo</string>
+    <string name="qtAlunos">Quantidade Alunos</string>
+    <string name="regime">Regime</string>
+
+    <string name="selecionePeriodo">Selecione o periodo</string>
+    <string name="selecioneDisciplina">Selecione as Disciplinas</string>
+    <string name="selecioneRegime">Selecione o Regime</string>
+    <string name="menu_cadastro_notas">Lançar Notas</string>
+    <string name="menu_cadatro_frequencia">Lançar Frequencia</string>
+    <string name="selecioneTurma">Selecione a Turma</string>
+    <string name="Aluno">Aluno</string>
+    <string name="percentual_frequencia">Percentual Frequencia</string>
+    <string name="cursos">Cursos</string>
+    <string name="selecioneCurso">Selecione o Curso</string>
+    <string name="nota">Nota</string>
+    <string name="Administrador">Administrador</string>
+    <string name="twEmailAdmin">admin@unipar.edu.br</string>
+    <string name="menu_cadasto_frequencia">Lançar Frequencia</string>
+
+</resources>
