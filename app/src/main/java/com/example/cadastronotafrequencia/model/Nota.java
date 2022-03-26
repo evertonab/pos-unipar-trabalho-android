@@ -2,25 +2,25 @@ package com.example.cadastronotafrequencia.model;
 
 import com.orm.SugarRecord;
 
-public class Frequencia extends SugarRecord {
+public class Nota extends SugarRecord {
     private Long   idAluno;
     private Long   idTurma;
-    private int    pcFrequencia;
+    private int    nota;
 
-    public Frequencia() {
+    public Nota() {
     }
 
-    public Frequencia(Long idAluno, Long idTurma, int pcFrequencia) {
+    public Nota(Long idAluno, Long idTurma, int nota) {
         this.idAluno = idAluno;
         this.idTurma = idTurma;
-        this.pcFrequencia = pcFrequencia;
+        this.nota = nota;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Frequencia frequencia = (Frequencia) o;
+        Nota frequencia = (Nota) o;
         return ((idAluno == frequencia.idAluno) && (idTurma == frequencia.idTurma));
     }
 
@@ -40,21 +40,16 @@ public class Frequencia extends SugarRecord {
         this.idTurma = idTurma;
     }
 
-    public int getPcFrequencia() {
-        return pcFrequencia;
+    public int getnota() {
+        return nota;
     }
 
-    public void setPcFrequencia(int pcFrequencia) {
-        this.pcFrequencia = pcFrequencia;
+    public void setnota(int nota) {
+        this.nota = nota;
     }
 
-    /*    @Override
-        public int hashCode() {
-            return Objects.hash(nome);
-        }
-    */
     @Override
     public String toString() {
-        return pcFrequencia + "%";
+        return nota + "%";
     }
 }

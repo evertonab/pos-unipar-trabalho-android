@@ -6,12 +6,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.home.HomeFragment"
-        android:background="@drawable/background"
 >
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="212dp"
+            android:background="@drawable/vt_backgroud2"
+    />
+
 
     <TextView
             android:id="@+id/textGrid"
-            android:text="@string/menu_home"
+            android:text="Sistema Unipar"
             android:textSize="40dp"
             android:textColor="@android:color/white"
             android:layout_centerHorizontal="true"
@@ -43,7 +48,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
-                android:onClick="lançarFrequencia"
+                android:onClick="lancarFrequencia"
         >
             <LinearLayout
                     android:layout_width="wrap_content"
@@ -75,10 +80,11 @@
                 android:layout_column="1"
                 android:layout_gravity="fill"
                 android:layout_rowWeight="1"
-                android:layout_columnWeight="5"
+                android:layout_columnWeight="2"
                 android:layout_margin="8dp"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="8dp"
+                android:onClick="lancarNotas"
         >
             <LinearLayout
                     android:layout_width="wrap_content"
@@ -106,6 +112,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+                android:id="@+id/cv_professor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="1"
@@ -116,6 +123,7 @@
                 android:layout_margin="8dp"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="8dp"
+                android:onClick="professores"
         >
             <LinearLayout
                     android:layout_width="wrap_content"
@@ -152,6 +160,7 @@
                 android:layout_margin="8dp"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="8dp"
+                android:onClick="alunos"
         >
             <LinearLayout
                     android:layout_width="wrap_content"
@@ -188,6 +197,7 @@
                 android:layout_margin="8dp"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="8dp"
+                android:onClick="disciplinas"
         >
             <LinearLayout
                     android:layout_width="wrap_content"
@@ -195,6 +205,7 @@
                     android:orientation="vertical"
                     android:gravity="center"
                     android:layout_gravity="center_vertical|center_horizontal">
+
                 <ImageView
                         android:layout_width="80dp"
                         android:layout_height="100dp"
@@ -224,6 +235,7 @@
                 android:layout_margin="8dp"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="8dp"
+                android:onClick="turmas"
         >
             <LinearLayout
                     android:layout_width="wrap_content"

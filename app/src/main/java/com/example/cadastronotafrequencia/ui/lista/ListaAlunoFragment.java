@@ -21,20 +21,19 @@ import java.util.List;
 
 public class ListaAlunoFragment extends Fragment {
 
-    private RecyclerView recyclerView;
+    private RecyclerView rvListaAlunos;
     private View view;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_lista, container, false);
+
         atualizaListaAluno();
 
         FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.btCadastro);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Funciona agora !!!!", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
                 abrirCadastroAluno();
             }
         });
@@ -51,14 +50,12 @@ public class ListaAlunoFragment extends Fragment {
         List<Aluno> listaAluno = new ArrayList<>();
         listaAluno = AlunoDAO.retornaAlunos("", new String[]{}, "nome asc");
 
-        recyclerView = (RecyclerView) view.findViewById(R.id.rvLista);
+        rvListaAlunos = (RecyclerView) view.findViewById(R.id.rvLista);
 
         AlunoAdapter adapter = new AlunoAdapter(view.getContext(), listaAluno);
 
-        //recyclerView = view.findViewById(R.id.card_view_aluno);
-        //recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-        recyclerView.setAdapter(adapter);
+        rvListaAlunos.setLayoutManager(new LinearLayoutManager(view.getContext()));
+        rvListaAlunos.setAdapter(adapter);
     }
 
     @Override

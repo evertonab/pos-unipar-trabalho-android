@@ -9,36 +9,67 @@
             android:id="@+id/nav_home"
             android:name="com.example.cadastronotafrequencia.ui.home.HomeFragment"
             android:label=""
-            tools:layout="@layout/fragment_home"/>
+            tools:layout="@layout/fragment_home">
+
+        <action android:id="@+id/action_nav_home_to_nav_cadPessoa"
+                app:destination="@id/nav_cadPessoa"/>
+
+        <action android:id="@+id/action_nav_home_to_nav_cadTurma"
+                app:destination="@id/nav_cadTurma"/>
+
+        <action android:id="@+id/action_nav_home_to_nav_cadNotas"
+                app:destination="@id/nav_cadNotas"/>
+
+        <action android:id="@+id/action_nav_home_to_nav_cadAluno"
+                app:destination="@id/nav_cadAluno"/>
+
+        <action android:id="@+id/action_nav_home_to_nav_cadDisciplina"
+                app:destination="@id/nav_cadDisciplina"/>
+
+        <action android:id="@+id/action_nav_home_to_nav_cadFrequencia"
+                app:destination="@id/nav_cadFrequencia"/>
+
+    </fragment>
 
 
     <fragment
             android:id="@+id/nav_cadPessoa"
             android:name="com.example.cadastronotafrequencia.ui.lista.ListaProfessorFragment"
             android:label="@string/menu_cadastro_professor"
-            tools:layout="@layout/fragment_lista"/>
+            tools:layout="@layout/fragment_lista">
+        <action android:id="@+id/action_nav_cadPessoa_to_nav_home" app:destination="@id/nav_home"/>
+    </fragment>
 
     <fragment
             android:id="@+id/nav_cadAluno"
             android:name="com.example.cadastronotafrequencia.ui.lista.ListaAlunoFragment"
             android:label="@string/menu_cadastra_aluno"
-            tools:layout="@layout/fragment_lista"/>
+            tools:layout="@layout/fragment_lista">
+        <action
+                android:id="@+id/action_nav_cadAluno_to_nav_home"
+                app:destination="@id/nav_home"/>
+    </fragment>
 
     <fragment
             android:id="@+id/nav_cadDisciplina"
             android:name="com.example.cadastronotafrequencia.ui.lista.ListaDisciplinaFragment"
             android:label="@string/menu_cadatro_disciplina"
-            tools:layout="@layout/fragment_lista"/>
+            tools:layout="@layout/fragment_lista">
+        <action android:id="@+id/action_nav_cadDisciplina_to_nav_home" app:destination="@id/nav_home"/>
+    </fragment>
 
     <fragment
             android:id="@+id/nav_cadTurma"
             android:name="com.example.cadastronotafrequencia.ui.lista.ListaTurmaFragment"
             android:label="@string/menu_cadatro_turma"
-            tools:layout="@layout/fragment_lista"/>
+            tools:layout="@layout/fragment_lista">
+
+        <action android:id="@+id/action_nav_cadTurma_to_nav_home" app:destination="@id/nav_home"/>
+    </fragment>
 
     <activity
         android:id="@+id/nav_cadNotas"
-        android:name="com.example.cadastronotafrequencia.CadastroNotasActivity"
+        android:name="com.example.cadastronotafrequencia.CadastroNotaActivity"
         android:label="@string/menu_cadastro_notas"
         tools:layout="@layout/activity_cadastro_notas"
     />

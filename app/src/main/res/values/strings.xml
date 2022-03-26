@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CadastroNotaFrequencia</string>
+    <string name="app_name">Unipar - CNF</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -14,7 +14,7 @@
     <string name="dtMatricula">Dt.Matricula</string>
     <string name="dtNasc">Dt.Nascimento</string>
     <string name="statusAprovacao">"Status "</string>
-    <string name="menu_cadastra_aluno">Cadastrar Aluno</string>
+    <string name="menu_cadastra_aluno">Alunos</string>
     <string name="limpar">Limpar</string>
     <string name="salvar">Salvar</string>
 
@@ -22,9 +22,9 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!-- texto menus -->
-    <string name="menu_cadastro_professor">Cadastrar Professor</string>
-    <string name="menu_cadatro_disciplina">Cadastrar Disciplina</string>
-    <string name="menu_cadatro_turma">Cadastrar Turma</string>
+    <string name="menu_cadastro_professor">Professores</string>
+    <string name="menu_cadatro_disciplina">Disciplinas</string>
+    <string name="menu_cadatro_turma">Turmas</string>
     <string name="menu_home">Home</string>
 
     <string name="professor">Professor</string>

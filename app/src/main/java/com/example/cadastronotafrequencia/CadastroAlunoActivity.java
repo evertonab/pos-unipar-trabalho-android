@@ -183,7 +183,7 @@ public class CadastroAlunoActivity extends AppCompatActivity {
         aluno.setCpf(edCpfAluno.getText().toString());
         aluno.setDtNasc(edDtNasc.getText().toString());
         aluno.setDtMatricula(edDtMatricula.getText().toString());
-        aluno.setIdTurma(turmaSelecionada.getId());
+        aluno.setIdTurma(String.valueOf(turmaSelecionada.getId()));
 
         if (AlunoDAO.salvar(aluno) > 0) {
             setResult(RESULT_OK);

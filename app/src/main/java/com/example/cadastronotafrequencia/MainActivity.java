@@ -1,10 +1,10 @@
 package com.example.cadastronotafrequencia;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.Menu;
-import com.google.android.material.snackbar.Snackbar;
+import androidx.fragment.app.FragmentManager;
 import com.google.android.material.navigation.NavigationView;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
+    FragmentManager fragmentManager = getSupportFragmentManager();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                    R.id.nav_home, R.id.nav_cadPessoa,  R.id.nav_cadDisciplina, R.id.nav_cadTurma, R.id.nav_cadAluno, R.id.nav_cadNotas)
+                R.id.nav_home, R.id.nav_cadPessoa, R.id.nav_cadDisciplina, R.id.nav_cadTurma, R.id.nav_cadAluno)
                 .setOpenableLayout(drawer)
                 .build();
 
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
 
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -55,5 +57,31 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    public void lancarFrequencia(View view) {
+        Intent intent = new Intent(view.getContext(), CadastroFrequenciaActivity.class);
+        startActivity(intent);
+    }
+
+    public void lancarNotas(View view) {
+        Intent intent = new Intent(view.getContext(), CadastroNotaActivity.class);
+        startActivity(intent);
+    }
+
+    public void professores(View view) {
+        Navigation.findNavController(view).navigate(R.id.action_nav_home_to_nav_cadPessoa);
+    }
+
+    public void alunos(View view) {
+        Navigation.findNavController(view).navigate(R.id.action_nav_home_to_nav_cadAluno);
+    }
+
+    public void disciplinas(View view) {
+        Navigation.findNavController(view).navigate(R.id.action_nav_home_to_nav_cadDisciplina);
+    }
+
+    public void turmas(View view) {
+        Navigation.findNavController(view).navigate(R.id.action_nav_home_to_nav_cadTurma);
     }
 }

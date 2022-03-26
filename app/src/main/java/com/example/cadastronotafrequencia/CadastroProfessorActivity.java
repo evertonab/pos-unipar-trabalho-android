@@ -92,7 +92,7 @@ public class CadastroProfessorActivity extends AppCompatActivity {
     private void validaCampos() {
         //Valida o campo RA do Aluno
         if (edRaProfessor.getText().toString().isEmpty()) {
-            edRaProfessor.setError("Informe o RA do professor");
+            edRaProfessor.setError("Informe o RA do Aluno");
             edRaProfessor.requestFocus();
 
             return;
@@ -110,7 +110,7 @@ public class CadastroProfessorActivity extends AppCompatActivity {
 
         //Valida o campo Nome do Aluno
         if (edNomeProfessor.getText().toString().isEmpty()) {
-            edNomeProfessor.setError("Informe o Nome do Professor");
+            edNomeProfessor.setError("Informe o Nome do Aluno");
             edNomeProfessor.requestFocus();
 
             return;
@@ -118,7 +118,7 @@ public class CadastroProfessorActivity extends AppCompatActivity {
 
         //Valida o campo CPF do Aluno
         if (edCpfProfessor.getText().toString().isEmpty()) {
-            edCpfProfessor.setError("Informe o CPF do Professor");
+            edCpfProfessor.setError("Informe o CPF do Aluno");
             edCpfProfessor.requestFocus();
 
             return;
@@ -126,7 +126,7 @@ public class CadastroProfessorActivity extends AppCompatActivity {
 
         //Valida o campo Data de Nascimento do Aluno
         if (edDtNasc.getText().toString().isEmpty()) {
-            edDtNasc.setError("Informe a Data de Nascimento do Professor");
+            edDtNasc.setError("Informe a Data de Nascimento do Aluno");
             edDtNasc.requestFocus();
 
             return;

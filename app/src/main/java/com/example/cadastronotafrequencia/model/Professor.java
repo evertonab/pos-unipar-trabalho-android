@@ -72,4 +72,3 @@ public class Professor extends SugarRecord {
         return nome;
     }
 }
-

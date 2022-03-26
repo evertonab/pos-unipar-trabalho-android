@@ -2,6 +2,7 @@ package com.example.cadastronotafrequencia.adapters;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,11 +10,15 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cadastronotafrequencia.R;
+import com.example.cadastronotafrequencia.dao.FrequenciaDAO;
+import com.example.cadastronotafrequencia.dao.NotaDAO;
 import com.example.cadastronotafrequencia.dao.TurmaDAO;
 import com.example.cadastronotafrequencia.model.Aluno;
+import com.example.cadastronotafrequencia.model.Frequencia;
 import com.example.cadastronotafrequencia.model.Turma;
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.sql.Struct;
 import java.util.List;
 
 public class AlunoAdapter extends RecyclerView.Adapter<AlunoAdapter.AlunoViewHolder> {
@@ -34,16 +39,18 @@ public class AlunoAdapter extends RecyclerView.Adapter<AlunoAdapter.AlunoViewHol
         TextInputEditText edTurma;
         TextInputEditText edDtMatricula;
         TextInputEditText edDtNascimento;
+        TextInputEditText edAprovacao;
 
         public AlunoViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            edRaAluno      = (TextInputEditText) itemView.findViewById(R.id.edRaAluno);
-            edNomeAluno    = (TextInputEditText) itemView.findViewById(R.id.edNomeAluno);
-            edCpfAluno     = (TextInputEditText) itemView.findViewById(R.id.edCpfAluno);
-            edTurma        = (TextInputEditText) itemView.findViewById(R.id.edTurma);
-            edDtMatricula  = (TextInputEditText) itemView.findViewById(R.id.edDtMatricula);
+            edRaAluno = (TextInputEditText) itemView.findViewById(R.id.edRaAluno);
+            edNomeAluno = (TextInputEditText) itemView.findViewById(R.id.edNomeAluno);
+            edCpfAluno = (TextInputEditText) itemView.findViewById(R.id.edCpfAluno);
+            edTurma = (TextInputEditText) itemView.findViewById(R.id.edTurma);
+            edDtMatricula = (TextInputEditText) itemView.findViewById(R.id.edDtMatricula);
             edDtNascimento = (TextInputEditText) itemView.findViewById(R.id.edDtNasc);
+            edAprovacao = (TextInputEditText) itemView.findViewById(R.id.edAprovacao);
         }
     }
 
@@ -61,22 +68,41 @@ public class AlunoAdapter extends RecyclerView.Adapter<AlunoAdapter.AlunoViewHol
     public void onBindViewHolder(@NonNull AlunoViewHolder holder, int position) {
         Aluno aluno = listaAlunos.get(position);
 
-        holder.edRaAluno     .setText(String.valueOf(aluno.getRa()));
-        holder.edCpfAluno    .setText(aluno.getCpf());
-        holder.edNomeAluno   .setText(aluno.getNome());
+        holder.edRaAluno.setText(String.valueOf(aluno.getRa()));
+        holder.edCpfAluno.setText(aluno.getCpf());
+        holder.edNomeAluno.setText(aluno.getNome());
 
-        Turma turma = TurmaDAO.retornaPorID(aluno.getIdTurma());
+        Turma turma = TurmaDAO.retornaPorID(Long.parseLong(aluno.getIdTurma()));
+        holder.edTurma.setText(turma.getNome());
 
-        holder.edTurma       .setText(turma.getNome());
-
-        /*todo Retirar depois*/
-        if (1 == 1) {
-            holder.edTurma.setTextColor(Color.RED);
-            //holder.edTurma.setdrawables
-        }
-
-        holder.edDtMatricula .setText(aluno.getDtMatricula());
+        holder.edDtMatricula.setText(aluno.getDtMatricula());
         holder.edDtNascimento.setText(aluno.getDtNasc());
+
+        Float mediaAluno = NotaDAO.retornaMedia(aluno.getId(), aluno.getIdTurma());
+        int pcfrequencia = 0;
+        try {
+
+            List<Frequencia> freq = FrequenciaDAO.retornaFrequencia("id_aluno = ? and id_turma = ?", new String[]{String.valueOf(aluno.getId()),
+                    aluno.getIdTurma()}, "");
+
+            Log.e("TESTE", freq.toString() +" ID ALUNO: " +  aluno.getId().toString() + " ID TURMA " + aluno.getIdTurma());
+            if (freq.size() > 0)
+                pcfrequencia = freq.get(0).getPcFrequencia();
+        } catch (Exception e) {
+            Log.e("AlunoAdapter", "Erro ao buscar frequência do aluno, Erro = " + e.getMessage());
+        }
+        if (mediaAluno >= 70) {
+            if (pcfrequencia > 70) {
+                holder.edAprovacao.setText("Aluno aprovado Média ( " + mediaAluno + "), Percentual de Frequência( " + pcfrequencia + "%)");
+                holder.edAprovacao.setTextColor(Color.GREEN);
+            } else {
+                holder.edAprovacao.setText("Aluno Reprovado por frequência, Frequência ( " + pcfrequencia + "%)");
+                holder.edAprovacao.setTextColor(Color.RED);
+            }
+        } else {
+            holder.edAprovacao.setText("Aluno Reprovado por Nota, Média ( " + mediaAluno + ")");
+            holder.edAprovacao.setTextColor(Color.RED);
+        }
 
     }
 
