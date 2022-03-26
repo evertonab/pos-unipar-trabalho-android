@@ -1,14 +1,16 @@
-#pos-unipar-trabalho-android
-Integrantes do Grupo:
+# pos-unipar-trabalho-android
 
-- Everton Alan Busse
-- Matheus Gobo
-- Simon Lucas
-#APP de cadasto de nota e frequencia
+Integrantes do Grupo: 
+ - Everton Alan Busse
+ - Matheus Gobo 
+ - Simon Lucas 
 
-Funcionalidades:
 
-- Cadastro Professor
+# APP de cadasto de nota e frequencia
+
+<h4>Funcionalidades:<h4>
+  
+- Cadastro Professor 
 - Cadastro de Disciplina
 - Cadastro de Aluno
 - Cadastro de Turmas
