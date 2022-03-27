@@ -50,5 +50,6 @@
     <string name="Administrador">Administrador</string>
     <string name="twEmailAdmin">admin@unipar.edu.br</string>
     <string name="menu_cadasto_frequencia">Lançar Frequencia</string>
+    <string name="media">Média</string>
 
 </resources>

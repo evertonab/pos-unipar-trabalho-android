@@ -81,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
         Navigation.findNavController(view).navigate(R.id.action_nav_home_to_nav_cadDisciplina);
     }
 
+
     public void turmas(View view) {
         Navigation.findNavController(view).navigate(R.id.action_nav_home_to_nav_cadTurma);
     }

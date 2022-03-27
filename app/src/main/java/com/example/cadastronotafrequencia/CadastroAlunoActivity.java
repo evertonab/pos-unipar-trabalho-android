@@ -14,13 +14,17 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import com.example.cadastronotafrequencia.dao.AlunoDAO;
+import com.example.cadastronotafrequencia.dao.ProfessorDAO;
 import com.example.cadastronotafrequencia.dao.TurmaDAO;
 import com.example.cadastronotafrequencia.model.Aluno;
+import com.example.cadastronotafrequencia.model.Professor;
 import com.example.cadastronotafrequencia.model.Turma;
 import com.example.cadastronotafrequencia.util.CpfMask;
 import com.example.cadastronotafrequencia.util.Util;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 import fr.ganfra.materialspinner.MaterialSpinner;
+import id.ionbit.ionalert.IonAlert;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -139,7 +143,18 @@ public class CadastroAlunoActivity extends AppCompatActivity {
             edRaAluno.requestFocus();
 
             return;
+        }else {
+            Aluno alunoExist = AlunoDAO.retornaPorRA(Integer.parseInt(edRaAluno.getText().toString()));
+            if (alunoExist != null) {
+                if (alunoExist.getRa() > 0) {
+                    edRaAluno.setError("Ra já cadatrado para o Aluno: " + alunoExist.getNome());
+                    edRaAluno.requestFocus();
+
+                    return;
+                }
+            }
         }
+
 
         //Valida o campo Nome do Aluno
         if (edNomeAluno.getText().toString().isEmpty()) {
@@ -186,10 +201,21 @@ public class CadastroAlunoActivity extends AppCompatActivity {
         aluno.setIdTurma(String.valueOf(turmaSelecionada.getId()));
 
         if (AlunoDAO.salvar(aluno) > 0) {
-            setResult(RESULT_OK);
-            finish();
+            new IonAlert(this, IonAlert.SUCCESS_TYPE)
+                    .setTitleText("Aluno Cadastrado com sucesso")
+                    .setConfirmClickListener(new IonAlert.ClickListener() {
+                        @Override
+                        public void onClick(IonAlert sDialog) {
+                            sDialog.dismiss();
+                            finish();
+                        }
+                    })
+                    .show();
+
         } else {
-            Util.customSnakeBar(lnPrincipal, "Erro ao salvar o aluno (" + aluno.getNome() + ") verifique o log", 0);
+            new IonAlert(this, IonAlert.ERROR_TYPE)
+                    .setTitleText("Erro ao salvar o aluno, entre em contato com o suporte")
+                    .show();
         }
     }
 

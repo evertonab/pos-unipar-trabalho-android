@@ -38,9 +38,7 @@ public class ListaDisciplinaFragment extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Funciona agora Disciplina!!!", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-                abrirCadastroDisciplina();
+                   abrirCadastroDisciplina();
             }
         });
 

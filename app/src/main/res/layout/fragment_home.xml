@@ -49,6 +49,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
                 android:onClick="lancarFrequencia"
+                android:backgroundTint="@color/white"
         >
             <LinearLayout
                     android:layout_width="wrap_content"
@@ -69,6 +70,7 @@
                         android:textStyle="bold"
                         android:textAlignment="center"
                         android:textAllCaps="true"
+                        android:textColor="@color/grey"
                 />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -85,6 +87,7 @@
                 app:cardCornerRadius="20dp"
                 app:cardElevation="8dp"
                 android:onClick="lancarNotas"
+                android:backgroundTint="@color/white"
         >
             <LinearLayout
                     android:layout_width="wrap_content"
@@ -107,6 +110,7 @@
                         android:textStyle="bold"
                         android:textAlignment="center"
                         android:textAllCaps="true"
+                        android:textColor="@color/grey"
                 />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -124,6 +128,7 @@
                 app:cardCornerRadius="20dp"
                 app:cardElevation="8dp"
                 android:onClick="professores"
+                android:backgroundTint="@color/white"
         >
             <LinearLayout
                     android:layout_width="wrap_content"
@@ -145,6 +150,8 @@
                         android:textStyle="bold"
                         android:textAlignment="center"
                         android:textAllCaps="true"
+                        android:textColor="@color/grey"
+
                 />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -161,6 +168,7 @@
                 app:cardCornerRadius="20dp"
                 app:cardElevation="8dp"
                 android:onClick="alunos"
+                android:backgroundTint="@color/white"
         >
             <LinearLayout
                     android:layout_width="wrap_content"
@@ -182,6 +190,7 @@
                         android:textStyle="bold"
                         android:textAlignment="center"
                         android:textAllCaps="true"
+                        android:textColor="@color/grey"
                 />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -198,6 +207,7 @@
                 app:cardCornerRadius="20dp"
                 app:cardElevation="8dp"
                 android:onClick="disciplinas"
+                android:backgroundTint="@color/white"
         >
             <LinearLayout
                     android:layout_width="wrap_content"
@@ -220,6 +230,7 @@
                         android:textStyle="bold"
                         android:textAlignment="center"
                         android:textAllCaps="true"
+                        android:textColor="@color/grey"
                 />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -236,6 +247,7 @@
                 app:cardCornerRadius="20dp"
                 app:cardElevation="8dp"
                 android:onClick="turmas"
+                android:backgroundTint="@color/white"
         >
             <LinearLayout
                     android:layout_width="wrap_content"
@@ -257,6 +269,7 @@
                         android:textStyle="bold"
                         android:textAlignment="center"
                         android:textAllCaps="true"
+                        android:textColor="@color/grey"
                 />
             </LinearLayout>
         </androidx.cardview.widget.CardView>

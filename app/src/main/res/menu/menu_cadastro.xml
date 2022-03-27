@@ -3,12 +3,12 @@
       xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item android:id="@+id/mn_limpar"
-          android:icon="@drawable/ic_menu_slideshow"
+          android:icon="@drawable/ic_cleaner"
           android:title="@string/limpar"
           app:showAsAction="always"/>
 
     <item android:id="@+id/mn_save"
-          android:icon="@drawable/ic_add_user"
+          android:icon="@drawable/ic_add"
           android:title="@string/salvar"
           app:showAsAction="always"/>
 </menu>

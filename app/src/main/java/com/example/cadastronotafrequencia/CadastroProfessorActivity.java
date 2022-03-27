@@ -16,6 +16,7 @@ import com.example.cadastronotafrequencia.model.Professor;
 import com.example.cadastronotafrequencia.util.CpfMask;
 import com.example.cadastronotafrequencia.util.Util;
 import com.google.android.material.textfield.TextInputEditText;
+import id.ionbit.ionalert.IonAlert;
 
 import java.util.Calendar;
 
@@ -143,10 +144,20 @@ public class CadastroProfessorActivity extends AppCompatActivity {
         professor.setDtNascimento(edDtNasc.getText().toString());
 
         if (ProfessorDAO.salvar(professor) > 0) {
-            setResult(RESULT_OK);
-            finish();
+            new IonAlert(this, IonAlert.SUCCESS_TYPE)
+                    .setTitleText("Professor cadastrado com sucesso")
+                    .setConfirmClickListener(new IonAlert.ClickListener() {
+                        @Override
+                        public void onClick(IonAlert sDialog) {
+                            sDialog.dismiss();
+                            finish();
+                        }
+                    })
+                    .show();
         } else {
-            Util.customSnakeBar(lnPrincipal, "Erro ao salvar o Professor (" + professor.getNome() + ") verifique o log", 0);
+            new IonAlert(this, IonAlert.ERROR_TYPE)
+                    .setTitleText("Erro ao salvar professor, entre em contato com o suporte")
+                    .show();
         }
     }
 

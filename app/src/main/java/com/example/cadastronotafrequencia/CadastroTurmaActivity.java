@@ -19,6 +19,7 @@ import com.example.cadastronotafrequencia.model.Turma;
 import com.example.cadastronotafrequencia.util.Util;
 import com.google.android.material.textfield.TextInputEditText;
 import fr.ganfra.materialspinner.MaterialSpinner;
+import id.ionbit.ionalert.IonAlert;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -164,10 +165,20 @@ public class CadastroTurmaActivity extends AppCompatActivity {
         turma.setDisciplina(disciplinaSelecionada.getNome());
 
         if (TurmaDAO.salvar(turma) > 0) {
-            setResult(RESULT_OK);
-            finish();
+            new IonAlert(this, IonAlert.SUCCESS_TYPE)
+                    .setTitleText("Turma salva com sucesso")
+                    .setConfirmClickListener(new IonAlert.ClickListener() {
+                        @Override
+                        public void onClick(IonAlert sDialog) {
+                            sDialog.dismiss();
+                            finish();
+                        }
+                    })
+                    .show();
         } else {
-            Util.customSnakeBar(lnPrincipal, "Erro ao salvar a Turma (" + turma.getNome() + ") verifique o log", 0);
+            new IonAlert(this, IonAlert.ERROR_TYPE)
+                    .setTitleText("Erro ao salvar turma, entre em contato com o suporte")
+                    .show();
         }
     }
 }

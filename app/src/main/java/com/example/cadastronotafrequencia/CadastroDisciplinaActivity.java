@@ -17,6 +17,7 @@ import com.example.cadastronotafrequencia.model.Professor;
 import com.example.cadastronotafrequencia.util.Util;
 import com.google.android.material.textfield.TextInputEditText;
 import fr.ganfra.materialspinner.MaterialSpinner;
+import id.ionbit.ionalert.IonAlert;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -80,7 +81,7 @@ public class CadastroDisciplinaActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.mn_limpar:
 
-                limparCampor();
+                limparCampos();
 
                 return true;
             case R.id.mn_save:
@@ -93,7 +94,7 @@ public class CadastroDisciplinaActivity extends AppCompatActivity {
         }
     }
 
-    private void limparCampor() {
+    private void limparCampos() {
         edNomeDisciplina.setText("");
         spProfessor.setSelection(0);
 
@@ -124,10 +125,21 @@ public class CadastroDisciplinaActivity extends AppCompatActivity {
         disciplina.setRaProfessor(profSelecionado.getRa());
 
         if (DisciplinaDAO.salvar(disciplina) > 0) {
-            setResult(RESULT_OK);
-            finish();
+            new IonAlert(this, IonAlert.SUCCESS_TYPE)
+                    .setTitleText("Disciplina Salva com sucesso")
+                    .setConfirmClickListener(new IonAlert.ClickListener() {
+                        @Override
+                        public void onClick(IonAlert sDialog) {
+                            sDialog.dismiss();
+                            finish();
+                        }
+                    })
+                    .show();
+
         } else {
-            Util.customSnakeBar(lnDisciplina, "Erro ao salvar a disciplina (" + disciplina.getNome() + ") verifique o log", 0);
+            new IonAlert(this, IonAlert.ERROR_TYPE)
+                    .setTitleText("Erro ao salvar a disciplina, entre em contato com o suporte")
+                    .show();
         }
     }
 
